@@ -139,7 +139,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                      /*  if (task.isSuccessful()) {
+                        if (task.isSuccessful()) {
                             addData();
                             //verification successful we will start the profile activity
                             Intent intent = new Intent(VerifyPhoneActivity.this, MainActivity2.class);
@@ -164,7 +164,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                                 }
                             });
                             snackbar.show();
-                        }*/
+                        }
                     }
                 });
     }

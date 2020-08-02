@@ -1,4 +1,4 @@
-package com.example.hospice1.ui.home;
+package com.example.hospice1.ui.gallery;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -9,9 +9,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.hospice1.MainActivity2;
 import com.example.hospice1.R;
+import com.example.hospice1.ui.gallery.GalleryFragment;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -20,12 +20,12 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class mcvadapter extends RecyclerView.Adapter<myrvholder> {
-    HomeFragment ma;
+    GalleryFragment ma;
     ArrayList<prod> uso;
     Activity co;
     MainActivity2 m2;
 
-    public mcvadapter(HomeFragment ma, ArrayList<prod> uso) {
+    public mcvadapter(GalleryFragment ma, ArrayList<prod> uso) {
         this.ma = ma;
         this.uso = uso;
     }
