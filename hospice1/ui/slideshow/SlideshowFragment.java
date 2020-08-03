@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hospice1.ClinicTabs;
 import com.example.hospice1.Departments;
 import com.example.hospice1.R;
 
@@ -81,11 +82,11 @@ public class SlideshowFragment extends Fragment {
     public void load() {
         if (usa.size() > 0)
             usa.clear();
-        db.collection("Clinic").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("Ayurveda").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 for(DocumentSnapshot q:task.getResult()) {
-                    com.example.hospice1.ui.slideshow.prod p=new com.example.hospice1.ui.slideshow.prod(q.getString("cname"),q.getString("dname"),q.getString("education"),q.getString("spl"),q.getString("cadd"),q.getId(),q.getString("imagelink"));
+                    com.example.hospice1.ui.slideshow.prod p=new com.example.hospice1.ui.slideshow.prod(q.getString("cname"),q.getString("dname"),q.getString("education"),q.getString("cadd"),q.getId(),q.getString("imagelink"));
                     usa.add(p);
 
                 }
@@ -153,7 +154,7 @@ public class SlideshowFragment extends Fragment {
 
     }
     public void next(String uid) {
-        Intent i = new Intent(getActivity(), Departments.class);
+        Intent i = new Intent(getActivity(), ClinicTabs.class);
 
         //i.putExtra("uid", uid);
         // i.putExtra("list",uso);

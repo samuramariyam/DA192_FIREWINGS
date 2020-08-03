@@ -106,6 +106,12 @@ v.findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
         Intent i=new Intent(getActivity(),Gp.class);
+        String name="Syed";
+        String upi="syrdabdurrahaman@paytm";
+        String amount="1";
+        i.putExtra("name",name);
+        i.putExtra("upi",upi);
+        i.putExtra("amount",amount);
         //i.putExtra("ref","/Hospital/EIJCdYbWlVhgNJkgI3VyuljtazS2/Departments/mPZLYUkvVyz1YBnTn7lv/Dr_List/fEFisKYF8ZpKv9oXFcCB/schedules/asun/slots/");
       //  i.putExtra("id",stat[selected]);
         startActivity(i);
@@ -167,7 +173,8 @@ v.findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
                    tt=v.findViewById(R.id.da);
                    tt.setText(c);
 
-                   a = q.getDate("currentDate").compareTo(d);
+                  // a = s.compareTo(d);
+                   a=0;
                    if(q.getString("status").equals("1")){
 
                        seats[i] = 'U';
@@ -226,8 +233,6 @@ v.findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
 
                 add();
             //Toast.makeText(getActivity(), "add", Toast.LENGTH_SHORT).show();
-        }else if(a<0){
-            Toast.makeText(getActivity(), "PLEASE CHECK THE DATE", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(getActivity(), "NO Appointmants Scheduled Today", Toast.LENGTH_SHORT).show();
         }

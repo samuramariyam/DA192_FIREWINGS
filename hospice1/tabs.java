@@ -50,7 +50,7 @@ public class tabs extends AppCompatActivity {
         Toast.makeText(tabs.this,c, Toast.LENGTH_SHORT).show();
 
         d=new Date();
-        load(c);
+        load();
        /* final SimpleDateFormat dateFormat= new SimpleDateFormat("EEEE dd.MM.yyyy");
         final Calendar currentCal = Calendar.getInstance();
         final String cd=dateFormat.format(currentCal.getTime());
@@ -87,7 +87,7 @@ public class tabs extends AppCompatActivity {
 
 
     }
-    public void load(String cs){
+    public void load(){
         adapter.AddFragment(new FragmentMonday(uid,depid,drid),"MON");
         adapter.AddFragment(new FragmentTuesday(uid,depid,drid),"TUE");
         adapter.AddFragment(new FragmentWednesday(uid,depid,drid),"WED");

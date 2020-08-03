@@ -44,7 +44,7 @@ public class mcvadapter extends RecyclerView.Adapter<myrvholder> {
         holder.cn.setText(uso.get(position).getCname());
         holder.un.setText("Dr."+uso.get(position).getUsername());
         holder.us.setText(uso.get(position).getUstatus());
-        holder.spl.setText(uso.get(position).getSpl());
+
         holder.cadd.setText(uso.get(position).getCadd());
         Picasso.get().load(uso.get(position).getImage()).into(holder.imageView);
          //Glide.with(ma.getContext())
@@ -65,7 +65,7 @@ public class mcvadapter extends RecyclerView.Adapter<myrvholder> {
     private void delsel(final int p) {
         final String uid;
 
-        ma.db.collection("Hospital").document(uid=(uso.get(p).getUid()).toString()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        ma.db.collection("Ayurveda").document(uid=(uso.get(p).getUid()).toString()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 //Toast.makeText(ma.getContext(), "Delete Successful", Toast.LENGTH_SHORT).show();

@@ -20,7 +20,7 @@ public class myrvholder extends RecyclerView.ViewHolder {
         cn=v.findViewById(R.id.e);
         un=v.findViewById(R.id.textView2);
         us=v.findViewById(R.id.textView3);
-        spl=v.findViewById(R.id.textView4);
+        //spl=v.findViewById(R.id.textView4);
         cadd=v.findViewById(R.id.textView5);
         del=v.findViewById(R.id.btnn);
         imageView=v.findViewById(R.id.imageView2);
