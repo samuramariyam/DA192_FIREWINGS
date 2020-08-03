@@ -88,9 +88,9 @@ public class tabs extends AppCompatActivity {
 
     }
     public void load(String cs){
-        adapter.AddFragment(new FragmentMonday(uid,depid,drid),cs);
-        adapter.AddFragment(new FragmentTuesday(uid,depid,drid),"NxtDate");
-        adapter.AddFragment(new FragmentWednesday(uid,depid,drid),"toDate");
+        adapter.AddFragment(new FragmentMonday(uid,depid,drid),"MON");
+        adapter.AddFragment(new FragmentTuesday(uid,depid,drid),"TUE");
+        adapter.AddFragment(new FragmentWednesday(uid,depid,drid),"WED");
 
         //adapter setup
         viewPager.setAdapter(adapter);

@@ -1,6 +1,5 @@
-package com.example.hospice1.ui.gallery;
+package com.example.hospice1;
 
-import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +8,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.hospice1.MainActivity2;
-import com.example.hospice1.R;
-import com.example.hospice1.ui.gallery.GalleryFragment;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -19,13 +15,14 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class mcvadapter extends RecyclerView.Adapter<myrvholder> {
-    GalleryFragment ma;
+public class mcvadapter2 extends RecyclerView.Adapter<myrvholder> {
+    Departments ma;
     ArrayList<prod> uso;
-    Activity co;
-    MainActivity2 m2;
 
-    public mcvadapter(GalleryFragment ma, ArrayList<prod> uso) {
+
+
+
+    public mcvadapter2(Departments ma, ArrayList<com.example.hospice1.prod> uso) {
         this.ma = ma;
         this.uso = uso;
     }
@@ -33,7 +30,7 @@ public class mcvadapter extends RecyclerView.Adapter<myrvholder> {
     @NonNull
     @Override
     public myrvholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater li= LayoutInflater.from(ma.getContext());
+        LayoutInflater li= LayoutInflater.from(ma.getBaseContext());
         View v=li.inflate(R.layout.list_item,parent,false);
 
         return new myrvholder(v);
@@ -41,55 +38,38 @@ public class mcvadapter extends RecyclerView.Adapter<myrvholder> {
 
     @Override
     public void onBindViewHolder(@NonNull myrvholder holder, final int position) {
-        holder.cn.setText(uso.get(position).getCname());
-        holder.un.setText("Dr."+uso.get(position).getUsername());
+        holder.un.setText(uso.get(position).getUsername());
         holder.us.setText(uso.get(position).getUstatus());
-        holder.spl.setText(uso.get(position).getSpl());
-        holder.cadd.setText(uso.get(position).getCadd());
         Picasso.get().load(uso.get(position).getImage()).into(holder.imageView);
-         //Glide.with(ma.getContext())
-                //.load(uso.get(position).getImage())
-                //.into(holder.imageView);
-
 
         holder.del.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
+                //
                 delsel(position);
-
             }
         });
     }
 
-    private void delsel(final int p) {
+    private void delsel(int p) {
         final String uid;
 
-        ma.db.collection("Clinic").document(uid=(uso.get(p).getUid()).toString()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        ma.db.collection("Department").document(uid=(uso.get(p).getUid()).toString()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 //Toast.makeText(ma.getContext(), "Delete Successful", Toast.LENGTH_SHORT).show();
-               // ma.loadDep(uso.get(p).getUid());
-               //Toast.makeText(co, "hiii", Toast.LENGTH_SHORT).show();
-               ma.next(uid);
+                // ma.loadDep(uso.get(p).getUid());
+                ma.next(uid);
             }
         })
-
-       /* ma.db.collection("users").document(uso.get(p).getUid()).delete()
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-
-                        Toast.makeText(ma.getContext(), "Delete Successful", Toast.LENGTH_SHORT).show();
-                        ma.load();
-                    }
-                })*/
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(ma.getContext(), "not", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ma.getBaseContext(), "not", Toast.LENGTH_SHORT).show();
                     }
                 });
+
     }
 
     @Override

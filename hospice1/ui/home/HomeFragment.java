@@ -149,12 +149,12 @@ public class HomeFragment extends Fragment {
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
 
     }
-  /*  public void next(String uid) {
+    public void next(String uid) {
         Intent i = new Intent(getActivity(), Departments.class);
 
         i.putExtra("uid", uid);
         // i.putExtra("list",uso);
         startActivity(i);
-    }*/
+    }
 
 }

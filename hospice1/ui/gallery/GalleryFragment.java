@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -17,16 +16,12 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.hospice1.Departments;
+import com.example.hospice1.ClinicTabs;
 import com.example.hospice1.R;
 
-import com.example.hospice1.ui.gallery.mcvadapter;
-import com.example.hospice1.ui.gallery.prod;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -40,7 +35,7 @@ public class GalleryFragment extends Fragment {
 
     FirebaseFirestore db;
     RecyclerView rv;
-    ArrayList<com.example.hospice1.ui.gallery.prod> usa;
+    ArrayList<prod> usa;
     com.example.hospice1.ui.gallery.mcvadapter mc;
     View root;
     String uid1;
@@ -72,7 +67,7 @@ public class GalleryFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        usa = new ArrayList<>();
+        usa = new ArrayList<com.example.hospice1.ui.gallery.prod>();
         recycler();
         setupfire();
         //addTest();
@@ -82,11 +77,11 @@ public class GalleryFragment extends Fragment {
     public void load() {
         if (usa.size() > 0)
             usa.clear();
-        db.collection("Hospital").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("Clinic").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                for (DocumentSnapshot q : task.getResult()) {
-                    com.example.hospice1.ui.gallery.prod p = new prod(q.getString("Hospital_name"), q.getString("Address"), q.getId(),q.getString("imagelink"));
+                for(DocumentSnapshot q:task.getResult()) {
+                    com.example.hospice1.ui.gallery.prod p=new com.example.hospice1.ui.gallery.prod(q.getString("cname"),q.getString("dname"),q.getString("education"),q.getString("spl"),q.getString("cadd"),q.getId(),q.getString("imagelink"));
                     usa.add(p);
 
                 }
@@ -154,9 +149,11 @@ public class GalleryFragment extends Fragment {
 
     }
     public void next(String uid) {
-        Intent i = new Intent(getActivity(), Departments.class);
+        Intent i = new Intent(getActivity(), ClinicTabs.class);
+        i.putExtra("uid",uid);
+        //i.putExtra("drid","fEFisKYF8ZpKv9oXFcCB");
+        //i.putExtra("depid","mPZLYUkvVyz1YBnTn7lv");
 
-        i.putExtra("uid", uid);
         // i.putExtra("list",uso);
         startActivity(i);
     }
