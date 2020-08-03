@@ -1,66 +1,66 @@
 package com.example.hospice1;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.annotation.NonNull;
+        import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.util.Log;
-import android.util.TypedValue;
-import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+        import android.content.Intent;
+        import android.graphics.Color;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.util.TypedValue;
+        import android.view.Gravity;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.Button;
+        import android.widget.LinearLayout;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+        import com.google.android.gms.tasks.OnCompleteListener;
+        import com.google.android.gms.tasks.OnFailureListener;
+        import com.google.android.gms.tasks.Task;
+        import com.google.firebase.firestore.DocumentReference;
+        import com.google.firebase.firestore.DocumentSnapshot;
+        import com.google.firebase.firestore.FirebaseFirestore;
+        import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+        import java.util.Date;
+        import java.util.HashMap;
+        import java.util.LinkedHashMap;
+        import java.util.Map;
 
 
-import android.graphics.Color;
-import android.os.Bundle;
-import android.util.Log;
-import android.util.TypedValue;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+        import android.graphics.Color;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.util.TypedValue;
+        import android.view.Gravity;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.LinearLayout;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+        import androidx.annotation.NonNull;
+        import androidx.annotation.Nullable;
+        import androidx.appcompat.app.AppCompatActivity;
+        import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+        import com.google.android.gms.tasks.OnCompleteListener;
+        import com.google.android.gms.tasks.OnFailureListener;
+        import com.google.android.gms.tasks.Task;
+        import com.google.firebase.firestore.DocumentSnapshot;
+        import com.google.firebase.firestore.FirebaseFirestore;
+        import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
+        import java.util.LinkedHashMap;
+        import java.util.Map;
+        import java.util.TreeMap;
 
-import static android.content.ContentValues.TAG;
+        import static android.content.ContentValues.TAG;
 
-public class ClinicFragMON extends Fragment implements View.OnClickListener {
+public class ClinicFragTUE extends Fragment implements View.OnClickListener {
     View v;
     Button b;
     int id=0,selected=0;
@@ -87,8 +87,8 @@ public class ClinicFragMON extends Fragment implements View.OnClickListener {
     int a;
     String uid,depid,drid,day;
 
-    public ClinicFragMON() {
-       // this.uid=uid;
+    public ClinicFragTUE() {
+        // this.uid=uid;
         //this.depid=depid;
         //this.drid=drid;
 
@@ -97,7 +97,7 @@ public class ClinicFragMON extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.clinicmon_fragment,container,false);
+        v = inflater.inflate(R.layout.clinictue_fragment,container,false);
         //super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_schedules);
         seats[0]='/';
@@ -157,7 +157,7 @@ public class ClinicFragMON extends Fragment implements View.OnClickListener {
         });*/
 
 
-        db.collection("/Hospital/EIJCdYbWlVhgNJkgI3VyuljtazS2/Departments/mPZLYUkvVyz1YBnTn7lv/Dr_List/fEFisKYF8ZpKv9oXFcCB/schedules/dwed/slots").orderBy("index").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("/Hospital/EIJCdYbWlVhgNJkgI3VyuljtazS2/Departments/mPZLYUkvVyz1YBnTn7lv/Dr_List/fEFisKYF8ZpKv9oXFcCB/schedules/ctue/slots").orderBy("index").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 int i=1;
@@ -225,7 +225,7 @@ public class ClinicFragMON extends Fragment implements View.OnClickListener {
 
 
             add();
-            Toast.makeText(getActivity(), "add", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), "add", Toast.LENGTH_SHORT).show();
         }else if(a<0){
             Toast.makeText(getActivity(), "PLEASE CHECK THE DATE", Toast.LENGTH_SHORT).show();
         }else{

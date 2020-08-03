@@ -165,9 +165,11 @@ public class FragmentTuesday extends Fragment implements View.OnClickListener {
 
 
             add();
-            Toast.makeText(getActivity(), "add", Toast.LENGTH_SHORT).show();
-        }else{
+           // Toast.makeText(getActivity(), "add", Toast.LENGTH_SHORT).show();
+        }else if(a<0){
             Toast.makeText(getActivity(), "PLEASE CHECK THE DATE", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(getActivity(), "NO Appointmants Scheduled Today", Toast.LENGTH_SHORT).show();
         }
         //}
         //});

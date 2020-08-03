@@ -41,8 +41,11 @@ public class mcvadapter extends RecyclerView.Adapter<myrvholder> {
 
     @Override
     public void onBindViewHolder(@NonNull myrvholder holder, final int position) {
-        holder.un.setText(uso.get(position).getUsername());
+        holder.cn.setText(uso.get(position).getCname());
+        holder.un.setText("Dr."+uso.get(position).getUsername());
         holder.us.setText(uso.get(position).getUstatus());
+        holder.spl.setText(uso.get(position).getSpl());
+        holder.cadd.setText(uso.get(position).getCadd());
         Picasso.get().load(uso.get(position).getImage()).into(holder.imageView);
          //Glide.with(ma.getContext())
                 //.load(uso.get(position).getImage())

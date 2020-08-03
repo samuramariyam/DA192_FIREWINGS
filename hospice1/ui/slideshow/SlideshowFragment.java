@@ -81,11 +81,11 @@ public class SlideshowFragment extends Fragment {
     public void load() {
         if (usa.size() > 0)
             usa.clear();
-        db.collection("Hospital").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("Clinic").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                for (DocumentSnapshot q : task.getResult()) {
-                    com.example.hospice1.ui.slideshow.prod p = new prod(q.getString("Hospital_name"), q.getString("Address"), q.getId(),q.getString("imagelink"));
+                for(DocumentSnapshot q:task.getResult()) {
+                    com.example.hospice1.ui.slideshow.prod p=new com.example.hospice1.ui.slideshow.prod(q.getString("cname"),q.getString("dname"),q.getString("education"),q.getString("spl"),q.getString("cadd"),q.getId(),q.getString("imagelink"));
                     usa.add(p);
 
                 }
@@ -155,7 +155,7 @@ public class SlideshowFragment extends Fragment {
     public void next(String uid) {
         Intent i = new Intent(getActivity(), Departments.class);
 
-        i.putExtra("uid", uid);
+        //i.putExtra("uid", uid);
         // i.putExtra("list",uso);
         startActivity(i);
     }
