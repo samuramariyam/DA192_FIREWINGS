@@ -1,0 +1,220 @@
+<html>
+    <style>
+        body {
+    margin:50px 0px; padding:0px;
+    text-align:center;
+    
+}
+        .input-group{
+    top:180px;
+    position:absolute;
+    width:280px;
+    transition:.10s;
+    align-items: center;
+    }
+    .submit-btn{
+    width:85%;
+    padding:10px 30px;
+    cursor:pointer;
+    display:block;
+    margin:auto;
+    background:linear-gradient(to right,#548b3a,#0be60b);
+    border:0;
+    outline:none;
+    border-radius:30px;
+    text-align: center;
+    }
+    /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+  
+  .modal-body {padding: 20px 16px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #fdce35;
+    color: white;
+  }
+
+  .input-field{
+    width:60%;
+    padding:20px 0;
+    margin:5px,0;
+    border-left:0;
+    border-top:0;
+    border-right:0;
+    border-bottom:1px solid #999;
+    outline:none;
+    background:transparent;
+    }
+    </style>
+    <h1>WELCOME TO THE APPOINTMENT WEB PORTAL</h1>
+    <body>
+
+        <form id="login" class="input-group">
+            <button type="button" id="admin" class="submit-btn" onclick="adminLogin()" >ADMIN</button>
+            <br>
+            <button type="button" class="submit-btn" onclick="hospitalVer()" >HOSPITAL ADMIN</button><br>
+            <button type="button" class="submit-btn" onclick="docterVer()" >CLINIC DOCTER</button>
+            
+        </form>
+        <div id="myModa" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Modal Header</h2>
+              </div>
+              <div class="modal-body">
+                <input type="text" id="una" class="input-field" placeholder="USERNAME"required><br>
+                <input type="text" id="key" class="input-field" placeholder="UNIQUE KEY"required><br>
+               <br><br>
+                     <button type="button" id="log" class="submit-btn"  >LOGIN</button>
+              </div>
+              <!--<div class="modal-footer">
+                <button type="button" id="addD" class="btn" onclick="AddDr();" style="margin-left: 450px; display: none;">ADD</button>
+              </div>
+            </div>-->
+          
+          </div>
+        <script>
+            ad=document.getElementById("admin");
+            modal=document.getElementById("myModa");
+             
+            log=document.getElementById("log");
+            var span = document.getElementsByClassName("close")[0];
+            log.onclick=function(){
+                 
+ 
+
+               
+
+
+    var request = new XMLHttpRequest();
+
+request.open('GET', 'http://localhost:5000/apitut-5987c/us-central1/app/api/adminlogin/', true);
+
+request.onload = function () {
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response)
+
+  if (request.status >= 200 && request.status < 400) {
+    for (x in data) {
+     
+        
+   if(data[x].username==document.getElementById("una").value && data[x].key==document.getElementById("key").value){
+    window.location.replace("C:/Users/syed/a/public/Admin.html");
+   }
+}
+attach();
+    
+  } else {
+    console.log('error')
+  }
+}
+
+request.send();
+}
+            ad.onclick=function(){
+                modal.style.display="block"
+            }
+            span.onclick=function(){
+                modal.style.display="none"
+            }
+            window.onclick = function(event) {
+						if (event.target == modal) {
+						  modal.style.display = "none";
+						}
+					  }
+            function hospitalVer(){
+                window.location.replace("C:/Users/syed/a/public/HosVer.html");
+            } 
+            function docterVer(){
+                window.location.replace("C:/Users/syed/a/public/DocVar.html");
+            }         
+        </script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+ 
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+ 
+ <!-- TODO: Add SDKs for Firebase products that you want to use
+	  https://firebase.google.com/docs/web/setup#available-libraries -->
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+ 
+ <script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+	  apiKey: "AIzaSyCytTzpmcWAIzYKvjOcFlMsj7W6YQY-flE",
+	  authDomain: "apitut-5987c.firebaseapp.com",
+	  databaseURL: "https://apitut-5987c.firebaseio.com",
+	  projectId: "apitut-5987c",
+	  storageBucket: "apitut-5987c.appspot.com",
+	  messagingSenderId: "737783441689",
+	  appId: "1:737783441689:web:91c977630907ea7b523d88",
+	  measurementId: "G-DFJNZCJ294"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	firebase.analytics();
+  </script>
+
+    </body>
+</html>

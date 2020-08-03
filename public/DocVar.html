@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLINIC VERIFICATION </title>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+
+}
+* {box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=tel], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.container {
+ background-color:DarkCyan;
+
+  border-radius: 5px;
+  padding: 80px;
+ height:100%;
+ width:100;
+  }
+.top {
+    text-align:center;
+    font-weight: bold;
+    font-size:45px;
+    color:#FEF4F2;
+}
+.forms {
+ background-color:#D9D8D8;
+ opacity: 0.8;
+ width:50%;
+ height:100%;
+top:0;
+bottom: 0;
+left: 0;
+right: 0;
+ 
+margin: auto;
+  border-radius: 5px;
+  padding: 20px;
+}
+.btnSubmit
+            {
+   width: 44%;
+                border-radius: 1rem;
+                padding: 12px 20px;
+                color: #fff;
+                background-color: black;
+                border: none;
+                cursor: pointer;
+                margin-right: 6%;
+                color: white;
+                margin-top: 12%;
+position:absolute;
+top:109%;
+left:28%;
+
+            }
+</style>
+</head>
+<body>
+<div class="container">
+<div class = "top">
+CLINIC VERIFICATION FORM
+</div>
+
+<form class = "forms">
+<label for="fname">NAME OF THE DOCTOR</label>
+    <input type="text" id="name" name="nameoftheapplicant" placeholder="Your name.."required>
+
+    <label for="fname">NAME OF THE CLINIC</label>
+    <input type="text" id="cname" name="nameoftheapplicant" placeholder="clinic name.."required>
+
+<label for="email">E-mail</label>
+    <input type="email" id="iemail" name="emailid" placeholder=" E-mail.."required>
+
+    <label for="contact">CONTACT NUMBER</label>
+    <input type="tel" id="num" name="contactnum" placeholder=" contact number.."required>
+
+<label for="haddress">CLINIC ADDRESS</label>
+    <input type="text" id="cad" name="hospital address" placeholder="clinic address.."required>
+
+<label for="fname">SPECIALISATION IF ANY</label>
+    <input type="text" id="spec" name="nameoftheapplicant" placeholder="specialist of..">
+
+<label> Dr ADHAAR PDF:</label>
+    <input type="file" id="adhaar" accept="application/pdf"><br>
+    <button type="button"   onclick="uploadImgAdhaar()" >UPLOAD</button><br><br>
+
+    <label>Dr REGISTERED PDF:</label>
+    <input type="file" id="drd" accept="application/pdf"><br>
+    <button type="button"   onclick="uploadhdRd()" >UPLOAD</button><br><br>
+
+<label>Dr DEGREE CERTIFICATE PDF:</label>
+    <input type="file" id="drc" accept="application/pdf"><br>
+    <button type="button"   onclick="uploadhdc()" >UPLOAD</button><br><br>
+
+<input type="checkbox" class="check-box"><span>I Agree to the terms and conditions</span>
+
+
+        <button" id="drverify" class="btnSubmit" onclick="VerifyDr()"  value="VERIFY" >VERIFY</button>
+         
+ </form>
+ </div>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+ 
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+ 
+ <!-- TODO: Add SDKs for Firebase products that you want to use
+	  https://firebase.google.com/docs/web/setup#available-libraries -->
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+ 
+ <script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+	  apiKey: "AIzaSyCytTzpmcWAIzYKvjOcFlMsj7W6YQY-flE",
+	  authDomain: "apitut-5987c.firebaseapp.com",
+	  databaseURL: "https://apitut-5987c.firebaseio.com",
+	  projectId: "apitut-5987c",
+	  storageBucket: "apitut-5987c.appspot.com",
+	  messagingSenderId: "737783441689",
+	  appId: "1:737783441689:web:91c977630907ea7b523d88",
+	  measurementId: "G-DFJNZCJ294"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	firebase.analytics();
+  </script>
+    <script src="DocVar.js"></script>
+ </body>
+</html>  

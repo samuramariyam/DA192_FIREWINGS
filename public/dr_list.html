@@ -1,0 +1,295 @@
+<html>
+<head>
+	<style>.border {
+		border: 1px solid grey;
+	  }
+	  
+	  .pad {
+		padding: 15px;
+	  }</style>
+       <!-- update the version number as needed -->
+	   <script defer src="/__/firebase/7.15.5/firebase-app.js"></script>
+	   <!-- include only the Firebase features as you need -->
+	   <script defer src="/__/firebase/7.15.5/firebase-auth.js"></script>
+	   <script defer src="/__/firebase/7.15.5/firebase-database.js"></script>
+	   <script defer src="/__/firebase/7.15.5/firebase-messaging.js"></script>
+	   <script defer src="/__/firebase/7.15.5/firebase-storage.js"></script>
+	   <!-- initialize the SDK after all desired features are loaded -->
+	   <script defer src="/__/firebase/init.js"></script>
+   
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>3 Column Layout</title>
+	<script type="text/javascript">
+	
+
+	
+		/* =============================
+		This script generates sample text for the body content. 
+		You can remove this script and any reference to it. 
+		 ============================= */
+		var bodyText=["The smaller your reality, the more convinced you are that you know everything.", "If the facts don't fit the theory, change the facts.", "The past has no power over the present moment.", "This, too, will pass.", "</p><p>You will not be punished for your anger, you will be punished by your anger.", "Peace comes from within. Do not seek it without.", "<h3>Heading</h3><p>The most important moment of your life is now. The most important person in your life is the one you are with now, and the most important activity in your life is the one you are involved with now."]
+		function generateText(sentenceCount){
+			for (var i=0; i<sentenceCount; i++)
+			document.write(bodyText[Math.floor(Math.random()*7)]+" ")
+		}
+	</script>	
+</head>
+
+<body>
+    <link rel="stylesheet" href="test.css">
+	<header id="header"><p>DOCTER LIST</p></header>
+	
+
+	<div id="container">
+
+		<main id="center" class="column">
+			<article>
+			
+				<div class="wrapper">
+
+					<div id='cont'>
+						
+					</div>
+	
+					<!--<div id="view_main" class="view_main">
+						<div id="mylist" class="view_wrap list-view" style="display: block;">
+							<div id="item" class="view_item">
+								<div class="vi_left">
+									<img src="C:\Users\syed\Pictures\dstrict.png"  alt="tomato">
+								</div>
+								<div class="vi_right">
+									<p id="tit" class="title">Tomato</p>
+									<p id="desc" class="content">periam impedit, veniam! Voluptate a impedit animi!</p>
+									<div onclick="CallMe();" class="btn">View More</div>
+								</div>
+							</div>
+							
+							
+				
+						</div>
+					</div>-->
+					<div id="bttn" class="btn">ADD DR</div>
+
+					<div id="myModa" class="modal">
+
+						<!-- Modal content -->
+						<div class="modal-content">
+						  <div class="modal-header">
+							<span class="close">&times;</span>
+							<h2>Modal Header</h2>
+						  </div>
+						  <div class="modal-body">
+							<input type="text" id="depna" class="input-field" placeholder="DOCTER NAME"required><br>
+							<input type="text" id="depdesc" class="input-field" placeholder="DOCTER DESIGNATION"required><br>
+							<label>Select  Dr Image:</label>
+                               <input type="file" id="image" accept="image/*"><br><br>
+                                 <button type="button"  class="submit-btn" onclick="uploadImg()" >UPLOAD</button>
+						  </div>
+						  <div class="modal-footer">
+							<button type="button" id="addD" class="btn" onclick="AddDr();" style="margin-left: 450px; display: none;">ADD</button>
+						  </div>
+						</div>
+					  
+					  </div>
+
+					<div id="myModal" class="modal">
+
+						<!-- Modal content -->
+						<div class="modal-content">
+						  <div class="modal-header">
+							<span class="close">&times;</span>
+							<h2>Modal Header</h2>
+						  </div>
+						  <div class="modal-body">
+							
+							<p style="word-spacing: 60px;" >DAYS:   SUN		MON 		TUE		WED		THU		FRI		SAT		</p>
+							<label>TIME FROM: </label><input type="text" id=1 size="4"required>
+							<input type="text" id=2 size="4" style="margin-left:50px;font: size 10px;"required>
+							<input type="text" id=3 size="4" style="margin-left:50px;"required>
+							<input type="text" id=4 size="4" style="margin-left:50px;"required>
+							<input type="text" id=5 size="4" style="margin-left:50px;"required>
+							<input type="text" id=6 size="4" style="margin-left:50px;"required>
+							<input type="text" id=7 size="4" style="margin-left:50px;"required>
+							<br>
+							<br>
+							<label>TIME FROM: </label><input type="text" id=8 size="4"required>
+							<input type="text" id=9 size="4" style="margin-left:50px;"required>
+							<input type="text" id=10 size="4" style="margin-left:50px;"required>
+							<input type="text" id=11 size="4" style="margin-left:50px;"required>
+							<input type="text" id=12  size="4" style="margin-left:50px;"required>
+							<input type="text" id=13 size="4" style="margin-left:50px;"required>
+							<input type="text" id=14 size="4" style="margin-left:50px;"required>
+							<br>
+							<br>
+							<br>
+							<button id="sun" style="margin-left: 100px; margin-bottom:5px;">SUN </button>
+							<button id="mon" style="margin-left: 75px; margin-bottom:5px;">MON </button>
+							<button id="tue" style="margin-left: 75px; margin-bottom:5px;">TUE </button>	
+							<button id="wed" style="margin-left: 70px; margin-bottom:5px;">WED </button>
+							<button id="thu" style="margin-left: 70px; margin-bottom:5px;">THU </button>
+							<button id="fri" style="margin-left: 70px; margin-bottom:5px;">FRI </button>
+							<button id="sat" style="margin-left: 70px; margin-bottom:5px;">SAT </button>
+							<br><br><br>
+							<button id="usun" style="margin-left: 90px; margin-bottom:20px;">UpdateSUN </button>
+							<button id="usun" style="margin-left: 25px; margin-bottom:20px;">UpdateMON </button>
+							<button id="umon" style="margin-left: 35px; margin-bottom:20px;">UpdateTUE </button>
+							<button id="utue" style="margin-left: 35px; margin-bottom:20px;">UpdateWED </button> 
+							<button id="uwed" style="margin-left: 30px; margin-bottom:20px;">UpdateTHU </button>
+							<button id="uthu" style="margin-left: 30px; margin-bottom:20px;">UpdateFRI </button>
+							<button id="usun" style="margin-left: 30px; margin-bottom:20px;">UpdateSAT </button>
+							
+
+
+
+						  </div>
+						  <div class="modal-footer">
+							<button type="button" id="update" class="btn" onclick="updateShed();" style="margin-right: 100px; display: block;">UPDATE</button>
+      
+							<button type="button" id="add" class="btn" onclick="AddShed();" style="margin-left: 450px; display: block;">ADD</button>
+						  </div>
+						</div>
+					  
+					</div>
+					
+
+					<div id="slots" class="modal">
+
+						<!-- Modal content -->
+						<div class="modal-content">
+						  <div class="modal-header">
+							<span class="close">&times;</span>
+							<h2>Modal Header</h2>
+						  </div>
+						  <div class="modal-body">
+							<p id="pr"></p>
+							
+                               
+						  </div>
+						  <div class="modal-footer">
+							<button type="button" id="up" class="btn" onclick="updateShed();" style="margin-right: 100px; display: block;">UPDATE</button>
+      
+							<button type="button" id="a" class="btn" onclick="AddShed();" style="margin-left: 450px; display: block;">ADD</button>
+						  </div>
+						</div>
+					  
+				    </div> 
+					  
+					  
+					  <script>
+					  // Get the modal
+					  var modal = document.getElementById("myModal");
+					  var moda = document.getElementById("myModa");
+					  var mo=document.getElementById("slots");
+					  // Get the button that opens the modal
+					  var btn = document.getElementById("bttn");
+					  
+         
+					  
+					  // Get the <span> element that closes the modal
+					  var span = document.getElementsByClassName("close")[0];
+					   var s=document.getElementsByClassName("close")[1]
+					   var ss=document.getElementsByClassName("close")[2]
+
+					  // When the user clicks the button, open the modal 
+					  /*lab.onclick = function() {
+						modal.style.display = "none";
+						lab.style.display = "block";
+
+					  }*/
+					  btn.onclick = function() {
+						moda.style.display = "block";
+					  }
+					  s.onclick = function() {
+						mo.style.display = "none";
+					  }
+					  ss.onclick = function() {
+						mo.style.display = "none";
+					  }
+					  // When the user clicks on <span> (x), close the modal
+					  span.onclick = function() {
+						moda.style.display = "none";
+						
+						window.localStorage.setItem("bttn0",JSON.stringify(0));
+						window.localStorage.setItem("bttn1",JSON.stringify(0));
+						window.localStorage.setItem("bttn2",JSON.stringify(0));
+						for(var i=1;i<=14;i++){
+					document.getElementById(i).value=" "; 
+					
+      }  
+					  }
+					/*  ss.onclick = function() {
+						modal.style.display = "none";
+					  }*/
+					  
+					  // When the user clicks anywhere outside of the modal, close it
+					  window.onclick = function(event) {
+						if (event.target == modal) {
+						  modal.style.display = "none";
+						}
+					  }
+					  window.onclick = function(event) {
+						if (event.target == moda) {
+						  moda.style.display = "none";
+						}
+					  }
+					  
+					  </script>
+				</div>
+			
+			</article>								
+		</main>
+
+		<nav id="left" class="column">
+			<h3>Left heading</h3>
+			<ul>
+				<li><a href="department.html">DEPARTMENTS</a></li><br>
+				<li><a href="#">BOOKED SLOTS</a></li><br>
+				<li onclick="deptt()"><a href="#"></a>REPORTS</li>
+				
+			</ul>
+			
+
+		</nav>
+
+		
+
+	</div>
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+ 
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+ 
+ <!-- TODO: Add SDKs for Firebase products that you want to use
+	  https://firebase.google.com/docs/web/setup#available-libraries -->
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+ 
+ <script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+	  apiKey: "AIzaSyCytTzpmcWAIzYKvjOcFlMsj7W6YQY-flE",
+	  authDomain: "apitut-5987c.firebaseapp.com",
+	  databaseURL: "https://apitut-5987c.firebaseio.com",
+	  projectId: "apitut-5987c",
+	  storageBucket: "apitut-5987c.appspot.com",
+	  messagingSenderId: "737783441689",
+	  appId: "1:737783441689:web:91c977630907ea7b523d88",
+	  measurementId: "G-DFJNZCJ294"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	firebase.analytics();
+  </script>
+
+
+	<script src="dr_list.js"></script>
+	
+	<div id="footer-wrapper">
+		<footer id="footer"><p>Footer...</p></footer>
+	</div>	
+
+</body>
+
+</html>

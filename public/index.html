@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.15.5/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.15.5/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.15.5/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.15.5/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.15.5/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+  </head>
+  <body>
+    <title>Login And Registration Form</title>
+    <link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        
+      
+    
+    
+    
+    <div class="hero">
+    <div class="form-box">
+    <div class="button-box">
+    <div id="btn"></div>
+    <button id="log" type="button" class="toggle-btn" onclick="login()">LOGIN</button><br>
+    <button id="sign" type="button" class="toggle-btn"onclick="register()">REGISTRATION</button>
+    </div>
+    
+    <form id="login" class="input-group">
+    <input type="email" id="email" class="input-field" placeholder="EMAIL ID"required>
+    <input type="password" id="pass" class="input-field" placeholder="PASSWORD"required>
+    <input type="checkbox" class="check-box"><span>Remember password</span>
+    <button type="button"  class="submit-btn" onclick="signIn()" >LOGIN</button>
+<br><button type="button" class="submit-btn" onclick="forgotPassword()" >Forgot Password</button>
+    
+    </form>
+    <form id="register" class="input-group">
+    <input type="email" id="iemail" class="input-field" placeholder="EMAIL"required>
+    <input type="text" id="ihosName" class="input-field" placeholder="HOSPITAL NAME"required>
+    <input type="text" id="ihosAddress" class="input-field" placeholder="HOSPITAL ADDRESS"required>
+    <input type="password" id="ipass" class="input-field" placeholder="CREATE PASSWORD"required>
+    <input type="password" class="input-field" placeholder="CONFIRM PASSWORD"required>
+    <input type="checkbox" class="check-box"><span>I Agree to the terms and conditions</span>
+    <button type="button"  class="submit-btn" onclick="signUp()" >SIGNUP</button><br>
+
+    
+
+    <button type="button"  class="submit-btn" onclick="signOut()" >SIGNOUT</button><br>
+
+   <!-- <label>Select Image:</label>
+    <input type="file" id="image" accept="image/*"><br><br>
+     <button type="button"  class="submit-btn" onclick="uploadImg()" >UPLOAD</button>-->
+
+    </form>
+
+    </div>
+    
+    </div>
+    
+    
+    
+      
+    
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCytTzpmcWAIzYKvjOcFlMsj7W6YQY-flE",
+    authDomain: "apitut-5987c.firebaseapp.com",
+    databaseURL: "https://apitut-5987c.firebaseio.com",
+    projectId: "apitut-5987c",
+    storageBucket: "apitut-5987c.appspot.com",
+    messagingSenderId: "737783441689",
+    appId: "1:737783441689:web:91c977630907ea7b523d88",
+    measurementId: "G-DFJNZCJ294"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+    
+    <script src="signup1.js"></script>
+
+    <script>
+    
+    </script>
+  </body>
+</html>
