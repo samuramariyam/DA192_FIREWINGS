@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="#00E2FF"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="85dp"
+        android:layout_marginRight="6dp"
+
+        android:layout_weight="1"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/e"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="04dp"
+            android:text="user name" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:padding="04dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+        <TextView
+            android:id="@+id/textView3"
+            android:padding="04dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:id="@+id/textView4"
+            android:padding="04dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:padding="04dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnn"
+        android:layout_marginTop="45dp"
+        android:layout_width="155dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+
+        android:background="@drawable/ab" />
+</LinearLayout>

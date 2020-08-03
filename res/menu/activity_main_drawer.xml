@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/hospital"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/clinic"
+            android:title="@string/menu_gallery" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ayush"
+            android:title="AYURVEDA" />
+        <item
+            android:id="@+id/y"
+            android:icon="@drawable/aby"
+            android:title="YOGA" />
+        <item
+            android:id="@+id/u"
+            android:icon="@drawable/u"
+            android:title="UNANI" />
+        <item
+            android:id="@+id/s"
+            android:icon="@drawable/ayush"
+            android:title="SIDDA" />
+        <item
+            android:id="@+id/h"
+            android:icon="@drawable/ayush"
+            android:title="HOMEOTATHY" />
+    </group>
+</menu>
